@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
-      - name: Cache SonarQube packages
+      - name: Cache SonarCloud packages
         uses: actions/cache@v4
         with:
           path: ~/.sonar/cache
@@ -34,4 +34,4 @@ jobs:
         working-directory: ./jpacman-framework
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: xvfb-run mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=INFOM124-Verification-et-Validation_jerome-sonar
+        run: xvfb-run mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=INFOM124-Verification-et-Validation_jerome-sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
