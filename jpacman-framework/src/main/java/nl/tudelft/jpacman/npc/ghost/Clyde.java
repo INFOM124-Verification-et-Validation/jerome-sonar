@@ -44,7 +44,7 @@ public class Clyde extends Ghost {
     /**
      * The amount of cells Clyde wants to stay away from Pac Man.
      */
-    private static final int SHYNESS = 8;
+    private static final int SHYNESS = 8; 
 
     /**
      * The variation in intervals, this makes the ghosts look more dynamic and
